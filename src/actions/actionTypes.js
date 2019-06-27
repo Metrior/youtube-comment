@@ -1,0 +1,7 @@
+export const ADD_COMMENT = 'ADD_COMMENT';
+// export const ADD_COMMENT_PENDING = 'ADD_COMMENT_PENDING';
+// export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
+// export const ADD_COMMENT_FAILED = 'ADD_COMMENT_FAILED';
+
+export const ADD_LIKE = 'ADD_LIKE';
+export const ADD_DISLIKE = 'ADD_DISLIKE';
