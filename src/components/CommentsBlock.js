@@ -6,18 +6,11 @@ import {sendComment,addLike,addDislike} from "../actions/index"
 
 class CommentsBlock extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            comment: "",
-        }
-    }
-
     render(){
         return(
             <div>
                 <CommentInput/>
-                <Comments/>
+                <Comments comments={this.props.Comments}/>
             </div>
         )
     }

@@ -17,10 +17,8 @@ class MessagesList extends Component{
     };
 
     componentDidUpdate() {
-        // EXAMPLE
-        const lastMessage = this.props.messages[this.props.messages.length -1].message;
-        document.title = lastMessage;
-        // notifyMe(lastMessage);
+        const lastComment = this.props.messages[this.props.messages.length -1].message;
+        document.title = lastComment;
         this.scrollToBottom();
     }
 
