@@ -2,13 +2,20 @@ import React, {Component} from "react";
 
 class CommentInput extends Component{
 
-    onValue = (e) => this.setState({ message: e.target.value });
+    constructor() {
+        super();
+        this.state = {
+            comment: ""
+        };
+    }
+
+    onValue = (e) => this.setState({ comment: e.target.value });
 
     sendComment = (e) => {
         e.preventDefault();
-        this.props.sendComment(this.state.message);
+        this.props.sendComment(this.state.comment);
         this.setState({
-            message: ""
+            comment: ""
         });
     };
 
@@ -19,7 +26,6 @@ class CommentInput extends Component{
                     <input
                         value={this.state.comment}
                         placeholder="Write a comment..."
-                        // ref={(ref) => this._input = ref}
                         onChange={this.onValue} type="text"
                     />
                     <button type="submit">SEND</button>

@@ -9,7 +9,7 @@ export default function commentReducer (state=initialState, action) {
         case ADD_COMMENT:
             return{
                 ...state,
-                message: action.payload,
+                comment: action.payload,
             };
         default: {
             return state

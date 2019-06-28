@@ -10,12 +10,14 @@ export default function commentReducer (state=initialState, action) {
         case ADD_LIKE:
             return{
                 ...state,
-                message: "like",
+                like: true,
+                dislike: false,
             };
         case ADD_DISLIKE:
             return{
                 ...state,
-                message: "dislike",
+                like: false,
+                dislike: true,
             };
         default: {
             return state
