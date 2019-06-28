@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers/rootReducer';
-import {loadState} from "../localStorage"
-// import throttle from 'lodash.throttle';
+import {loadState, saveState} from "../localStorage"
+import throttle from 'lodash.throttle';
 
 const persistedState = loadState();
 
@@ -12,10 +12,10 @@ const store = createStore(
 );
 
 
-// store.subscribe(throttle(() => {
-//     saveState({
-//         todos: store.getState().todos
-//     });
-// }, 1000));
+store.subscribe(throttle(() => {
+    saveState({
+        comment: store.getState().comment
+    });
+}, 1000));
 
 export default store;

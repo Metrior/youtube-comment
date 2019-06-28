@@ -25,21 +25,20 @@ class MessagesList extends Component{
     }
 
     render() {
-        const { messages } = this.props;
-        // const myMessages = messages.length > 0 ? messages.map(item => (
-        //         <SingleComment
-        //             key={item.id}
-        //             id={item.id}
-        //             name={item.name}
-        //             message={item.message}
-        //         />
-        //     )
-        // ) : <div>Loading....</div>;
+        const { comments } = this.props;
+        const allComments = comments.length > 0 ? comments.map(item => (
+                <SingleComment
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    message={item.message}
+                />
+            )
+        ) : null;
 
-        const myMessages = <div></div>
         return (
-            <ul ref={(ref) => this._global = ref}>
-                {myMessages}
+            <ul>
+                {allComments}
             </ul>
         )
     }
