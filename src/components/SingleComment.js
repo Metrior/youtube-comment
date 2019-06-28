@@ -6,18 +6,31 @@ import dislike from "../pictures/dislike.png";
 
 class SingleComment extends Component {
 
+    onClick = (e) => {
+        e.preventDefault();
+        return <CommentsBlock/>
+    };
+
+    addLike = (e) => {
+        e.preventDefault();
+        this.props.addLike(this.state.like);
+    };
+
+    addDislike = (e) => {
+        e.preventDefault();
+        this.props.addDislike(this.state.dislike);
+    };
+
     render() {
+        const { comment } = this.props;
         return (
-            <li key={props.id}>
-                <div className="avatar" style={{background: "green"}}>{props.name[0].toUpperCase()}</div>
-                <div className="name">{props.name}</div>
-                <div className="message">{props.message}</div>
-                <div className="like"><img src={like} alt=""/></div>
-                <div className="like"><img src={dislike} alt=""/></div>
-                <button onClick={(e) => {
-                    e.preventDefault();
-                    return <CommentsBlock/>
-                }}>Reply
+            <li key={comment.id}>
+                <div className="avatar" style={{background: "green"}}>{comment.name[0].toUpperCase()}</div>
+                <div className="name">{comment.name}</div>
+                <div className="message">{comment.message}</div>
+                <div onClick={this.addLike} className="like"><img src={like} alt=""/></div>
+                <div onClick={this.addDislike} className="like"><img src={dislike} alt=""/></div>
+                <button onClick={this.onClick}>Reply
                 </button>
             </li>
         )

@@ -18,7 +18,7 @@ class CommentsBlock extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        Comments: state.commentsReducer,
+        Comments: state.commentsReducer.comments,
         Like: state.likeReducer,
     }
 };
@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         sendComment: (comment)=>dispatch(sendComment(comment)),
         addLike: (comment)=>dispatch(addLike(comment)),
-        addDisike: (comment)=>dispatch(addDislike(comment))
+        addDislike: (comment)=>dispatch(addDislike(comment))
     }
 };
 
